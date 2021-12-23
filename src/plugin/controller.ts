@@ -13,14 +13,15 @@ declare module '*.svg' {
 
 let criarFrame = (title: string, x: number, y: number) => {
     let frame = figma.createFrame();
+    frame.resize(200, 1);
     frame.layoutMode = 'VERTICAL';
-    frame.counterAxisSizingMode = 'AUTO';
+    frame.primaryAxisSizingMode = 'AUTO';
     frame.itemSpacing = 8;
-    frame.paddingBottom = 8;
-    frame.paddingTop = 8;
-    frame.paddingRight = 8;
-    frame.paddingLeft = 8;
+    frame.verticalPadding = 8;
+    frame.horizontalPadding = 8;
     frame.name = title;
+    frame.strokes = [{type: 'SOLID', color: {r: 0, g: 0, b: 0}}];
+    frame.strokeWeight = 1;
     frame.x = x;
     frame.y = y;
     return frame;
@@ -46,6 +47,7 @@ let criarLinha = () => {
 let criarInformacao = (title, text) => {
     let frame = figma.createFrame();
     frame.layoutMode = 'VERTICAL';
+    frame.counterAxisSizingMode = 'FIXED';
     frame.layoutAlign = 'STRETCH';
     frame.itemSpacing = 4;
 
@@ -57,6 +59,8 @@ let criarInformacao = (title, text) => {
     let texto = figma.createText();
     texto.characters = text;
     texto.fontSize = 12;
+    texto.textAutoResize = 'HEIGHT';
+    texto.layoutAlign = 'STRETCH';
 
     frame.appendChild(cabecalho);
     frame.appendChild(texto);
@@ -161,6 +165,7 @@ figma.ui.onmessage = async (msg) => {
                 list = [];
             }
             enviarLista(list);
+            console.log(list);
         });
     }
 
