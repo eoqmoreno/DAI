@@ -170,7 +170,7 @@ figma.ui.onmessage = async (msg) => {
     }
 
     if (figma.currentPage.selection.length > 0 && msg.renomear) {
-        figma.currentPage.selection[0].name = msg.renomear;
+        figma.currentPage.selection[0].name = msg.renomear + ' - ' + msg.linguagem;
     } else {
         figma.ui.postMessage('Selecione um elemento da página!');
     }

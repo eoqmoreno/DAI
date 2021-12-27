@@ -43,7 +43,10 @@ export default function Atalho() {
             <div className="content">
                 <TitleBar text="Descrever atalhos do teclado"></TitleBar>
 
-                <p className="regular">Preencha os campos abaixo com as informações do atalho:</p>
+                <p className="regular">
+                    Preencha os campos abaixo com as informações do atalho, mas lembre-se de criar comandos compostos
+                    para não atrapalhar a navegação:
+                </p>
 
                 <Input placeholder="Atalho* (ex: Ctrl + R)" required={true} name="atalho" change={setAtalho}></Input>
                 <Input placeholder="Ação do atalho*" required={true} name="acao" change={setAcao}></Input>

@@ -8,7 +8,8 @@ import {useState} from 'react';
 
 export default function Intitular() {
     const [feedback, setFeedback] = useState('');
-    const [titulo, setTitulo] = useState('0');
+    const [titulo, setTitulo] = useState('');
+    const [linguagem, setLinguagem] = useState('');
 
     let criar = () => {
         if (titulo !== '') {
@@ -16,6 +17,7 @@ export default function Intitular() {
                 {
                     pluginMessage: {
                         renomear: titulo,
+                        linguagem: linguagem,
                     },
                 },
                 '*'
@@ -32,9 +34,16 @@ export default function Intitular() {
             <div className="content">
                 <TitleBar text="Intitular página"></TitleBar>
 
-                <p className="regular">Selecione o elemento correspondente a página e preencha o título da página:</p>
+                <p className="regular">Selecione o elemento correspondente a página e preencha as informações:</p>
 
-                <Input placeholder="Título da página*" required={true} name="posicao" change={setTitulo}></Input>
+                <Input
+                    placeholder="Título/objetivo da página*"
+                    required={true}
+                    name="titulo"
+                    change={setTitulo}
+                ></Input>
+
+                <Input placeholder="Linguagem*" required={true} name="linguagem" change={setLinguagem}></Input>
 
                 {feedback && <p className="regular required">{feedback}</p>}
             </div>

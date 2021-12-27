@@ -15,8 +15,9 @@ export default function Home() {
             <Header></Header>
             <div className="content">
                 <TitleBar text="Tipo do elemento"></TitleBar>
-
-                <p className="regular">Para começar, escolha o tipo de o que deseja documentar a acessibilidade:</p>
+                <p className="regular">
+                    Para começar, escolha o tipo de elemento que deseja documentar a acessibilidade:
+                </p>
 
                 <select
                     onChange={(e) => {

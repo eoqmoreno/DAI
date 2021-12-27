@@ -22,6 +22,11 @@ export default function MidiaAudio() {
                     transcrição do texto do áudio.
                 </p>
 
+                <p className="regular">
+                    Quando colocar elementos de mídia lembre-se de adicionar os botões de controle da mídia (avançar,
+                    voltar, pausar, continuar...).
+                </p>
+
                 <Link local="https://google.com" text="ver mais informações"></Link>
             </div>
 
